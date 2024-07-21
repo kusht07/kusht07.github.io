@@ -1,1 +1,1 @@
-# js-dev-monorepo
+A sandbox project to understand Javascript Concepts
