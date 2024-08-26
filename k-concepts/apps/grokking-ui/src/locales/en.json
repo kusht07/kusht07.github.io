@@ -1,0 +1,28 @@
+{
+  "landingPage": {
+    "title": "Kushagra's Project Portfolio",
+    "description": "Welcome to my project showcase. Click on a project to explore:",
+    "viewProject": "View Project"
+  },
+  "nav": {
+    "home": "Home",
+    "dataTables": "Data Tables",
+    "todoApp": "Todo App",
+    "dataVisualizer": "Data Visualizer"
+  },
+  "dataTables": {
+    "title": "Data Tables",
+    "description": "A project showcasing data in tabular format."
+  },
+  "todoApp": {
+    "title": "Todo App",
+    "description": "A simple todo application to manage your tasks."
+  },
+  "dataVisualizer": {
+    "title": "Data Visualizer",
+    "description": "An app to visualize and analyze various datasets."
+  },
+  "loadingAnimation": {
+    "loading": "Loading..."
+  }
+}

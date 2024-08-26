@@ -1,0 +1,9 @@
+{
+  "name": "grokking-ui",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/grokking-ui/src",
+  "projectType": "application",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project grokking-ui --web",
+  "targets": {}
+}
