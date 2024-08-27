@@ -7,7 +7,7 @@ const LoadingAnimation: React.FC = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setAnimationFrame((prev) => (prev + 1) % frames.length);
-    }, 1000); // 750ms * 4 frames = 3 seconds total duration
+    }, 500); // 750ms * 4 frames = 3 seconds total duration
 
     return () => clearInterval(intervalId);
   }, []);

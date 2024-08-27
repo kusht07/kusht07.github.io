@@ -8,7 +8,7 @@
     "home": "Home",
     "dataTables": "Data Tables",
     "todoApp": "Todo App",
-    "dataVisualizer": "Data Visualizer"
+    "searchEngine": "Search Engine"
   },
   "dataTables": {
     "title": "Data Tables",
@@ -18,9 +18,9 @@
     "title": "Todo App",
     "description": "A simple todo application to manage your tasks."
   },
-  "dataVisualizer": {
-    "title": "Data Visualizer",
-    "description": "An app to visualize and analyze various datasets."
+  "searchEngine": {
+    "title": "Search Engine",
+    "description": "A powerful search engine to find information quickly."
   },
   "loadingAnimation": {
     "loading": "Loading..."

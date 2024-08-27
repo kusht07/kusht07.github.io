@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import './DataTables.css';
 
 interface User {
   id: number;
@@ -71,24 +70,24 @@ const DataTables: React.FC = () => {
         <div className="bg-white shadow-xl rounded-lg overflow-hidden">
           <div className="overflow-x-auto relative">
             {loading && (
-              <div className="loading-overlay">
-                <div className="loader"></div>
+              <div className="absolute top-0 left-0 right-0 bottom-0 bg-white bg-opacity-70 flex justify-center items-center z-10">
+                <div className="loader border-4 border-blue-200 border-t-4 border-t-blue-500 rounded-full w-10 h-10 animate-spin"></div>
               </div>
             )}
-            <table className="data-table">
-              <thead className="table-header">
+            <table className="min-w-full">
+              <thead className="bg-primary-600">
                 <tr>
-                  <th>ID</th>
-                  <th>Name</th>
-                  <th>Age</th>
-                  <th>Email</th>
-                  <th>
+                  <th className="py-3 px-6 text-left text-xs font-medium text-white uppercase tracking-wider">ID</th>
+                  <th className="py-3 px-6 text-left text-xs font-medium text-white uppercase tracking-wider">Name</th>
+                  <th className="py-3 px-6 text-left text-xs font-medium text-white uppercase tracking-wider">Age</th>
+                  <th className="py-3 px-6 text-left text-xs font-medium text-white uppercase tracking-wider">Email</th>
+                  <th className="py-3 px-6 text-left text-xs font-medium text-white uppercase tracking-wider">
                     <div className="flex items-center">
                       <span className="mr-2">Gender</span>
                       <select
                         value={genderFilter}
                         onChange={handleGenderFilterChange}
-                        className="gender-filter"
+                        className="text-xs bg-primary-500 text-white border border-primary-200 rounded-md p-1 focus:outline-none focus:ring-2 focus:ring-primary-300"
                       >
                         <option value="all">All</option>
                         <option value="male">Male</option>
@@ -96,20 +95,20 @@ const DataTables: React.FC = () => {
                       </select>
                     </div>
                   </th>
-                  <th>Height (cm)</th>
-                  <th>Weight (kg)</th>
+                  <th className="py-3 px-6 text-left text-xs font-medium text-white uppercase tracking-wider">Height (cm)</th>
+                  <th className="py-3 px-6 text-left text-xs font-medium text-white uppercase tracking-wider">Weight (kg)</th>
                 </tr>
               </thead>
-              <tbody className="table-body">
+              <tbody className="bg-white divide-y divide-gray-200">
                 {users.map((user) => (
-                  <tr key={user.id}>
-                    <td className="font-medium text-blue-800">{user.id}</td>
-                    <td>{`${user.firstName} ${user.lastName}`}</td>
-                    <td>{user.age}</td>
-                    <td className="text-blue-600 hover:text-blue-800">{user.email}</td>
-                    <td className="capitalize">{user.gender}</td>
-                    <td>{user.height}</td>
-                    <td>{user.weight}</td>
+                  <tr key={user.id} className="hover:bg-primary-50 transition-colors duration-200">
+                    <td className="py-4 px-6 whitespace-nowrap text-sm font-medium text-blue-800">{user.id}</td>
+                    <td className="py-4 px-6 whitespace-nowrap text-sm">{`${user.firstName} ${user.lastName}`}</td>
+                    <td className="py-4 px-6 whitespace-nowrap text-sm">{user.age}</td>
+                    <td className="py-4 px-6 whitespace-nowrap text-sm text-blue-600 hover:text-blue-800">{user.email}</td>
+                    <td className="py-4 px-6 whitespace-nowrap text-sm capitalize">{user.gender}</td>
+                    <td className="py-4 px-6 whitespace-nowrap text-sm">{user.height}</td>
+                    <td className="py-4 px-6 whitespace-nowrap text-sm">{user.weight}</td>
                   </tr>
                 ))}
               </tbody>
@@ -127,14 +126,14 @@ const DataTables: React.FC = () => {
                   <button
                     onClick={() => handlePageChange(currentPage - 1)}
                     disabled={currentPage === 1 || loading}
-                    className="pagination-button"
+                    className="relative inline-flex items-center px-2 py-2 rounded-l-md border border-primary-200 bg-white text-sm font-medium text-primary-500 hover:bg-primary-50 disabled:bg-gray-100 disabled:text-gray-400"
                   >
                     Previous
                   </button>
                   <button
                     onClick={() => handlePageChange(currentPage + 1)}
                     disabled={currentPage === totalPages || loading}
-                    className="pagination-button"
+                    className="relative inline-flex items-center px-2 py-2 rounded-r-md border border-primary-200 bg-white text-sm font-medium text-primary-500 hover:bg-primary-50 disabled:bg-gray-100 disabled:text-gray-400"
                   >
                     Next
                   </button>

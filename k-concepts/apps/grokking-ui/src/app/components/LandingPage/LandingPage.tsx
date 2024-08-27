@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import './LandingPage.css';
 
 const LandingPage: React.FC = () => {
   const [fadeIn, setFadeIn] = useState(false);
@@ -13,27 +12,27 @@ const LandingPage: React.FC = () => {
 
   const projects = [
     { path: '/todo', name: t('nav.todoApp'), description: t('todoApp.description') },
-    { path: '/workingwithdata', name: t('nav.dataVisualizer'), description: t('dataVisualizer.description') },
     { path: '/datatables', name: t('nav.dataTables'), description: t('dataTables.description') },
+    { path: '/search', name: t('nav.searchEngine'), description: t('searchEngine.description') },
   ];
 
   return (
-    <div className={`landing-page ${fadeIn ? 'fade-in' : 'fade-out'}`}>
-      <div className="content-container">
-        <h1 className="title">{t('landingPage.title')}</h1>
-        <p className="description">{t('landingPage.description')}</p>
-        <div className="projects-grid">
+    <div className={`min-h-screen bg-gray-100 flex flex-col items-center justify-center p-4 transition-opacity duration-500 ${fadeIn ? 'opacity-100' : 'opacity-0'}`}>
+      <div className="bg-white p-8 rounded-lg shadow-md max-w-4xl w-full">
+        <h1 className="text-4xl font-bold mb-6 text-center text-primary-600">{t('landingPage.title')}</h1>
+        <p className="mb-8 text-primary-700 text-center">{t('landingPage.description')}</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project) => (
             <Link
               key={project.path}
               to={project.path}
-              className="project-link"
+              className="block bg-white border border-primary-100 rounded-lg shadow-md transition-shadow duration-300 ease-in-out hover:shadow-lg overflow-hidden"
             >
-              <div className="project-content">
-                <h2 className="project-title">{project.name}</h2>
-                <p className="project-description">{project.description}</p>
+              <div className="p-6">
+                <h2 className="text-2xl font-semibold mb-2 text-primary-600">{project.name}</h2>
+                <p className="text-primary-700">{project.description}</p>
               </div>
-              <div className="view-project">
+              <div className="bg-primary-500 text-white text-center py-2 font-semibold">
                 {t('landingPage.viewProject')}
               </div>
             </Link>
