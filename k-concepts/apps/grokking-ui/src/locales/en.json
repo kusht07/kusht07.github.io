@@ -12,15 +12,15 @@
   },
   "dataTables": {
     "title": "Data Tables",
-    "description": "A project showcasing data in tabular format."
+    "description": "A project showcasing Pagination Concept in React"
   },
   "todoApp": {
     "title": "Todo App",
-    "description": "A simple todo application to manage your tasks."
+    "description": "Showcases array operations and conditional style renders"
   },
   "searchEngine": {
     "title": "Search Engine",
-    "description": "A powerful search engine to find information quickly."
+    "description": "This Project showcases use of deboucing in react"
   },
   "loadingAnimation": {
     "loading": "Loading..."

@@ -41,7 +41,7 @@ const DataTables: React.FC = () => {
       const data = await response.json();
 
       // Simulate a minimum 2-second loading time
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      await new Promise(resolve => setTimeout(resolve, 1000));
 
       setUsers(data.users);
       setTotalPages(Math.ceil(data.total / ITEMS_PER_PAGE));

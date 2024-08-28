@@ -62,7 +62,7 @@ const TodoApp: React.FC = () => {
               />
               <button
                 type="submit"
-                className={`flex-shrink-0 text-lg border-4 py-2 px-4 rounded ${isDarkMode ? 'bg-blue-600 hover:bg-blue-700 border-blue-600 hover:border-blue-700 text-white' : 'bg-blue-500 hover:bg-blue-700 border-blue-500 hover:border-blue-700 text-white'}`}
+                className={`flex-shrink-0 text-lg border-4 py-2 px-4 rounded ${isDarkMode ? 'bg-blue-600 hover:bg-blue-700 border-blue-600 hover:border-blue-700 text-white' : 'bg-blue-700 hover:bg-blue-500 border-blue-700 hover:border-blue-500 text-white'}`}
               >
                 Add Todo
               </button>
