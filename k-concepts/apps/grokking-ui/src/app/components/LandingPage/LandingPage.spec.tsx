@@ -18,10 +18,6 @@ describe('LandingPage', () => {
     );
   });
 
-  it('renders without crashing', () => {
-    expect(screen.getByText('landingPage.title')).toBeInTheDocument();
-  });
-
   it('displays the correct title', () => {
     expect(screen.getByText('landingPage.title')).toBeInTheDocument();
   });
