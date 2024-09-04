@@ -89,3 +89,8 @@ For example:
 - To run the Express app: `nx serve express-app`
 
 You can now start developing your applications within this monorepo structure. Happy coding!
+
+## Deploying Applications:
+
+To deploy the grokking UIs to gh-pages, you can use the following commands:
+- `npm run predeploy && npm run deploy` for the react-app

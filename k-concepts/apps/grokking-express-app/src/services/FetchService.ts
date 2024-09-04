@@ -13,6 +13,12 @@ export class FetchService {
     return FetchService.instance;
   }
 
+  /**
+   * Fetches data from the API for a given category
+   * @param {string} category - The category of data to fetch
+   * @returns {Promise<any>} A promise that resolves to the fetched data
+   * @throws {Error} If there's an error during the fetch operation
+   */
   async fetchData(category): Promise<any> {
     try {
       const response = await fetch(`${this.apiUrl}/${category}`);

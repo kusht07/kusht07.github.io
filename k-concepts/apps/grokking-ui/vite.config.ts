@@ -19,13 +19,8 @@ export default defineConfig({
 
   plugins: [react(), nxViteTsPaths()],
 
-  // Uncomment this if you are using workers.
-  // worker: {
-  //  plugins: [ nxViteTsPaths() ],
-  // },
-
   build: {
-    outDir: '../../dist/apps/grokking-ui',
+    outDir: '../../dist/js-dev-monorepo/',
     emptyOutDir: true,
     reportCompressedSize: true,
     commonjsOptions: {
