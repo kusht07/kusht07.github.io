@@ -7,7 +7,7 @@
     "deploy": "gh-pages -d dist"
   },
   "private": true,
-  "homepage": "https://kushcodes.github.io/",
+  "homepage": "https://kusht07.github.io/",
   "dependencies": {
     "@testing-library/jest-dom": "^6.5.0",
     "axios": "^1.7.5",
