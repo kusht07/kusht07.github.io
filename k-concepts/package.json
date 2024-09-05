@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "predeploy": "nx build grokking-ui",
+    "predeploy": "nx build grokking-ui --skip-nx-cache",
     "deploy": "gh-pages -d dist"
   },
   "private": true,

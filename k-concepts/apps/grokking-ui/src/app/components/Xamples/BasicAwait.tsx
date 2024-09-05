@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
-const TodoApp = () => {
-    const [todos, setTodos] = useState([]);
+const BasicAwait = () => {
+    const [data, setData] = useState([]);
     useEffect(() => {
         const fetchTodos = async () => {
             try {
                 const response = await fetch('https://jsonplaceholder.typicode.com/todos');
                 const data = await response.json();
-                setTodos(data);
+                setData(data);
             } catch (error) {
                 console.error('Error fetching todos:', error);
             }
@@ -17,8 +17,8 @@ const TodoApp = () => {
     }, []);
 
     return (
-        <div className='todo-app'>Hello World!</div>
+        <div>Basic Await</div>
     );
 };
 
-export default TodoApp;
+export default BasicAwait;

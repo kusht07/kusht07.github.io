@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface User {
   id: number;
@@ -12,6 +13,7 @@ interface User {
 }
 
 const DataTables: React.FC = () => {
+  const { t } = useTranslation();
   const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -31,7 +33,7 @@ const DataTables: React.FC = () => {
       let url = `https://dummyjson.com/users?limit=${ITEMS_PER_PAGE}&skip=${skip}`;
       
       if (genderFilter !== 'all') {
-        url += `&filter=gender:${genderFilter}`;
+        url = `https://dummyjson.com/users/filter?key=gender&value=${genderFilter}&limit=${ITEMS_PER_PAGE}&skip=${skip}`;
       }
 
       const response = await fetch(url);
@@ -47,7 +49,7 @@ const DataTables: React.FC = () => {
       setTotalPages(Math.ceil(data.total / ITEMS_PER_PAGE));
       setLoading(false);
     } catch (err) {
-      setError('Error fetching users');
+      setError(t('dataTables.error'));
       setLoading(false);
     }
   };
@@ -66,37 +68,37 @@ const DataTables: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl font-extrabold text-center text-blue-700 mb-8">User Data Table</h2>
-        <div className="bg-white shadow-xl rounded-lg overflow-hidden">
-          <div className="overflow-x-auto relative">
-            {loading && (
+      {loading && (
               <div className="absolute top-0 left-0 right-0 bottom-0 bg-white bg-opacity-70 flex justify-center items-center z-10">
                 <div className="loader border-4 border-blue-200 border-t-4 border-t-blue-500 rounded-full w-10 h-10 animate-spin"></div>
               </div>
             )}
+        <h2 className="text-3xl font-extrabold text-center text-blue-700 mb-8">{t('dataTables.title')}</h2>
+        <div className="bg-white shadow-xl rounded-lg overflow-hidden">
+          <div className="overflow-x-auto relative">
             <table className="min-w-full">
               <thead className="bg-primary-600">
                 <tr>
-                  <th className="py-3 px-6 text-left text-xs font-medium text-white uppercase tracking-wider">ID</th>
-                  <th className="py-3 px-6 text-left text-xs font-medium text-white uppercase tracking-wider">Name</th>
-                  <th className="py-3 px-6 text-left text-xs font-medium text-white uppercase tracking-wider">Age</th>
-                  <th className="py-3 px-6 text-left text-xs font-medium text-white uppercase tracking-wider">Email</th>
+                  <th className="py-3 px-6 text-left text-xs font-medium text-white uppercase tracking-wider">{t('dataTables.tableHeaders.id')}</th>
+                  <th className="py-3 px-6 text-left text-xs font-medium text-white uppercase tracking-wider">{t('dataTables.tableHeaders.name')}</th>
+                  <th className="py-3 px-6 text-left text-xs font-medium text-white uppercase tracking-wider">{t('dataTables.tableHeaders.age')}</th>
+                  <th className="py-3 px-6 text-left text-xs font-medium text-white uppercase tracking-wider">{t('dataTables.tableHeaders.email')}</th>
                   <th className="py-3 px-6 text-left text-xs font-medium text-white uppercase tracking-wider">
                     <div className="flex items-center">
-                      <span className="mr-2">Gender</span>
+                      <span className="mr-2">{t('dataTables.tableHeaders.gender')}</span>
                       <select
                         value={genderFilter}
                         onChange={handleGenderFilterChange}
                         className="text-xs bg-primary-500 text-white border border-primary-200 rounded-md p-1 focus:outline-none focus:ring-2 focus:ring-primary-300"
                       >
-                        <option value="all">All</option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
+                        <option value="all">{t('dataTables.genderFilter.all')}</option>
+                        <option value="male">{t('dataTables.genderFilter.male')}</option>
+                        <option value="female">{t('dataTables.genderFilter.female')}</option>
                       </select>
                     </div>
                   </th>
-                  <th className="py-3 px-6 text-left text-xs font-medium text-white uppercase tracking-wider">Height (cm)</th>
-                  <th className="py-3 px-6 text-left text-xs font-medium text-white uppercase tracking-wider">Weight (kg)</th>
+                  <th className="py-3 px-6 text-left text-xs font-medium text-white uppercase tracking-wider">{t('dataTables.tableHeaders.height')}</th>
+                  <th className="py-3 px-6 text-left text-xs font-medium text-white uppercase tracking-wider">{t('dataTables.tableHeaders.weight')}</th>
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
@@ -118,7 +120,7 @@ const DataTables: React.FC = () => {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-700">
-                  Showing page <span className="font-medium">{currentPage}</span> of <span className="font-medium">{totalPages}</span>
+                  {t('dataTables.pagination.showing')} <span className="font-medium">{currentPage}</span> {t('dataTables.pagination.of')} <span className="font-medium">{totalPages}</span>
                 </p>
               </div>
               <div>
@@ -128,14 +130,14 @@ const DataTables: React.FC = () => {
                     disabled={currentPage === 1 || loading}
                     className="relative inline-flex items-center px-2 py-2 rounded-l-md border border-primary-200 bg-white text-sm font-medium text-primary-500 hover:bg-primary-50 disabled:bg-gray-100 disabled:text-gray-400"
                   >
-                    Previous
+                    {t('dataTables.pagination.previous')}
                   </button>
                   <button
                     onClick={() => handlePageChange(currentPage + 1)}
                     disabled={currentPage === totalPages || loading}
                     className="relative inline-flex items-center px-2 py-2 rounded-r-md border border-primary-200 bg-white text-sm font-medium text-primary-500 hover:bg-primary-50 disabled:bg-gray-100 disabled:text-gray-400"
                   >
-                    Next
+                    {t('dataTables.pagination.next')}
                   </button>
                 </nav>
               </div>

@@ -8,11 +8,36 @@
     "home": "Home",
     "dataTables": "Data Tables",
     "todoApp": "Todo App",
-    "searchEngine": "Search Engine"
+    "searchEngine": "Search Engine",
+    "flexComponent": "Flex Component",
+    "notesApp": "Code Snippet Store",
+    "contextMemoExample": "Context & useMemo Example"
   },
   "dataTables": {
-    "title": "Data Tables",
-    "description": "A project showcasing Pagination Concept in React"
+    "title": "User Data Table",
+    "description": "A project showcasing Pagination Concept in React using limit and offset",
+    "tableHeaders": {
+      "id": "ID",
+      "name": "Name",
+      "age": "Age",
+      "email": "Email",
+      "gender": "Gender",
+      "height": "Height (cm)",
+      "weight": "Weight (kg)"
+    },
+    "genderFilter": {
+      "all": "All",
+      "male": "Male",
+      "female": "Female"
+    },
+    "pagination": {
+      "showing": "Showing page",
+      "of": "of",
+      "previous": "Previous",
+      "next": "Next"
+    },
+    "loading": "Loading...",
+    "error": "Error fetching users"
   },
   "todoApp": {
     "title": "Todo App",
@@ -21,6 +46,23 @@
   "searchEngine": {
     "title": "Search Engine",
     "description": "This Project showcases use of deboucing in react"
+  },
+  "flexComponent": {
+    "title": "Flex Component",
+    "description": "Demonstrates the use of Flexbox layout in React"
+  },
+  "notesApp": {
+    "title": "Store your code snippets with Local Storage",
+    "description": "A code snippet note-taking application to demonstrate state management in React",
+    "titlePlaceholder": "Enter note title...",
+    "contentPlaceholder": "Enter your note content here...",
+    "addNote": "Add Snippet",
+    "delete": "Delete",
+    "sendToEmail": "Send to Email"
+  },
+  "contextMemoExample": {
+    "title": "Context API and useMemo Example",
+    "description": "Demonstrates the use of React Context for theme and useMemo for performance optimization"
   },
   "loadingAnimation": {
     "loading": "Loading..."

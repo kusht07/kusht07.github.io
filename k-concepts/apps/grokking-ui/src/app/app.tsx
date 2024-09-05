@@ -6,6 +6,9 @@ import DataTables from './components/DataTables/DataTables';
 import LoadingAnimation from './components/Animations/LoadingAnimation';
 import SearchEngine from './components/SearchEngine/SearchEngine';
 import HomeButton from './components/HomeButton/HomeButton';
+import FlexComponent from './components/Xamples/FlexComponent';
+import NotesApp from './components/NotesApp/NotesApp';
+import ContextMemoExample from './components/ContextMemoExample/ContextMemoExample';
 
 const AppContent = () => {
   const location = useLocation();
@@ -19,6 +22,9 @@ const AppContent = () => {
         <Route path="/todo" element={<TodoApp />} />
         <Route path="/search" element={<SearchEngine />} />
         <Route path="/datatables" element={<DataTables />} />
+        <Route path="/flex" element={<FlexComponent />} />
+        <Route path="/notes" element={<NotesApp />} />
+        <Route path="/contextmemo" element={<ContextMemoExample />} />
       </Routes>
     </>
   );

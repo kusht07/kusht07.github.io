@@ -15,6 +15,9 @@ const LandingPage: React.FC = () => {
     { path: '/todo', name: t('nav.todoApp'), description: t('todoApp.description') },
     { path: '/datatables', name: t('nav.dataTables'), description: t('dataTables.description') },
     { path: '/search', name: t('nav.searchEngine'), description: t('searchEngine.description') },
+    { path: '/flex', name: t('nav.flexComponent'), description: t('flexComponent.description') },
+    { path: '/notes', name: t('nav.notesApp'), description: t('notesApp.description') },
+    { path: '/contextmemo', name: t('nav.contextMemoExample'), description: t('contextMemoExample.description') },
   ];
 
   return (
@@ -42,7 +45,7 @@ const LandingPage: React.FC = () => {
         </div>
         <h1 className="text-4xl font-bold mb-6 text-center text-primary-600">{t('landingPage.title')}</h1>
         <p className="mb-8 text-primary-700 text-center">{t('landingPage.description')}</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project) => (
             <Link
               key={project.path}
