@@ -141,7 +141,7 @@ export default function Index() {
                 </svg>
                 <span>
                   YouTube channel
-                  <span> Nx Show, talks & tutorials </span>
+                  <span> Nx talks & tutorials </span>
                 </span>
                 <svg
                   fill="none"
