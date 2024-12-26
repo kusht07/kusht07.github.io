@@ -29,7 +29,8 @@
     "../../apps/grokking-next-js/.next/types/**/*.ts",
     "../../dist/apps/grokking-next-js/.next/types/**/*.ts",
     "next-env.d.ts",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "build/types/**/*.ts"
   ],
   "exclude": [
     "node_modules",
