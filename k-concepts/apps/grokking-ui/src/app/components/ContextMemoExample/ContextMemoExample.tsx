@@ -28,7 +28,7 @@ const ExpensiveComputation = ({ num }: { num: number }) => {
 };
 
 export const ContextMemoExample: React.FC = () => {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('dark');
   const [num, setNum] = useState(1);
 
   const toggleTheme = () => {

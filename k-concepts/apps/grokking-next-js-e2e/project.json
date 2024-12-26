@@ -1,0 +1,9 @@
+{
+  "name": "grokking-next-js-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/grokking-next-js-e2e/src",
+  "tags": [],
+  "implicitDependencies": ["grokking-next-js"],
+  "// targets": "to see all targets run: nx show project grokking-next-js-e2e --web",
+  "targets": {}
+}
